@@ -64,35 +64,81 @@ openclaw onboard
 
 ## 📚 文档导航
 
-### 入门指南
+### 🌱 入门指南
 - [安装指南](docs/getting-started/installation.md) - 详细安装步骤
 - [快速开始](docs/getting-started/quickstart.md) - 5 分钟上手
 - [创建第一个机器人](docs/getting-started/first-bot.md)
+- [配置文件速查](docs/入门指南/03-配置文件速查手册.md)
 
-### 进阶教程
+### 🚀 场景化指南
+- [个人助理搭建指南](docs/guides/个人助理搭建指南.md) - 30 分钟打造个人 AI 助理
+- [团队 Bot 搭建指南](docs/guides/团队 Bot 搭建指南.md) - 小团队 AI 协作方案
+- [客服机器人搭建指南](docs/guides/客服机器人搭建指南.md) - 7x24 小时智能客服
+- [远程部署指南](docs/guides/远程部署指南.md) - 云服务器/Docker 部署
+
+### 🎓 进阶教程
 - [多通道配置](docs/advanced/multi-channel.md)
 - [自定义插件开发](docs/advanced/custom-plugins.md)
 - [智能体路由策略](docs/advanced/agent-routing.md)
+- [技能开发教程](docs/advanced/skill-development.md) ⭐ NEW
+- [多智能体协作](docs/advanced/multi-agent-collaboration.md) ⭐ NEW
 
-### 示例与模板
-- [示例配置](examples/) - 可直接使用的配置示例
-- [配置模板](templates/) - 快速启动模板
+### 🎬 视频教程
+- [安装教程视频脚本](docs/video-scripts/01-安装教程.md)
+- [5 分钟快速上手脚本](docs/video-scripts/02-5 分钟快速上手.md)
 
-### 常见问题
-- [FAQ](faq/) - 常见问题解答
+### 💻 示例代码
+- [飞书集成示例](examples/feishu/) - 多维表格/日历/任务/文档
+- [GitHub 集成示例](examples/github/) - Issue 处理/PR 审查 ⭐ NEW
+- [Notion 集成示例](examples/notion/) - 页面创建/数据库管理
+- [定时任务示例](examples/cron/) - 日报/周报自动生成
+- [技能示例](examples/skills/) - 天气查询/智能提醒 ⭐ NEW
+- [数据库同步示例](examples/database/) ⭐ NEW
+
+### 📖 飞书深度集成
+- [基础集成](docs/feishu-integration/basic/) - 多维表格/日历/任务/文档
+- [实战工作流](docs/feishu-integration/workflows/README.md) - 晨间简报/会议纪要/周报
+
+### ❓ 常见问题
+- [安装问题](docs/FAQ/01-安装问题.md)
+- [配置问题](docs/FAQ/02-配置问题.md)
+- [渠道连接](docs/FAQ/03-渠道连接.md)
+- [AI 模型](docs/FAQ/04-AI 模型.md)
+- [工具使用](docs/FAQ/05-工具使用.md)
+- [性能优化](docs/FAQ/06-性能优化.md)
+- [安全加固](docs/FAQ/07-安全加固.md)
+
+### 📋 社区建设
+- [贡献指南](CONTRIBUTING.md)
+- [代码规范](.github/ISSUE_TEMPLATE/)
+- [Issue 模板](.github/ISSUE_TEMPLATE/)
+- [PR 模板](.github/PULL_REQUEST_TEMPLATE.md)
 
 ## 🌟 特色功能
 
-- ✅ **多通道支持**: WhatsApp, Telegram, Discord, iMessage 等
+- ✅ **多通道支持**: WhatsApp, Telegram, Discord, iMessage, 飞书等
 - ✅ **自托管**: 运行在你的设备上，数据完全可控
 - ✅ **插件系统**: 可扩展的插件架构
 - ✅ **多智能体路由**: 支持多个 AI 助手同时工作
 - ✅ **Web 控制台**: 浏览器管理界面
 - ✅ **移动端支持**: iOS/Android 节点配对
+- ✅ **飞书深度集成**: 多维表格/日历/任务/文档
+- ✅ **丰富示例**: 20+ 实用示例代码
+- ✅ **场景化指南**: 个人/团队/客服多种场景
 
 ## 🤝 参与贡献
 
 欢迎提交 Issue 和 Pull Request！
+
+### 贡献方式
+
+- 📚 改进文档（错别字、翻译、内容补充）
+- 💡 新增教程和示例
+- 🐛 报告 Bug
+- ✨ 提出新功能建议
+- 🔧 提交代码修复
+
+### 贡献流程
 
 1. Fork 本仓库
 2. 创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
@@ -100,9 +146,18 @@ openclaw onboard
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 开启一个 Pull Request
 
+详细指南请查看 [贡献指南](CONTRIBUTING.md)。
+
 ## 📄 许可证
 
 采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+## 📊 仓库统计
+
+- 📁 文件数量：30+
+- 📝 文档页数：30+
+- 💻 示例代码：10+
+- ⭐ 最近更新：2026-03-18
 
 ## 🔗 相关链接
 
