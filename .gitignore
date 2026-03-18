@@ -58,3 +58,7 @@ playwright-report/
 *.bak
 *.tmp
 .cache/
+
+# 运营日报（移到仓库外）
+运营日报/
+*.md.bak
