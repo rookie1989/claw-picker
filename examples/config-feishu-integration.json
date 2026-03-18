@@ -1,0 +1,166 @@
+{
+  "_comment": "OpenClaw 配置示例 - 飞书深度集成",
+  "_version": "1.0.0",
+  
+  "gateway": {
+    "port": 3000,
+    "host": "0.0.0.0",
+    "name": "OpenClaw 飞书助手"
+  },
+  
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "name": "飞书机器人",
+      "appId": "${FEISHU_APP_ID}",
+      "appSecret": "${FEISHU_APP_SECRET}",
+      "verificationToken": "${FEISHU_VERIFICATION_TOKEN}",
+      "settings": {
+        "enableRichText": true,
+        "enableCards": true,
+        "enableMention": true,
+        "autoJoinGroups": false,
+        "allowedTenants": ["your-company.feishu.cn"]
+      }
+    }
+  },
+  
+  "agent": {
+    "model": "claude-3-sonnet",
+    "provider": "anthropic",
+    "apiKey": "${ANTHROPIC_API_KEY}",
+    "systemPrompt": "你是公司的智能助手，集成在飞书平台。\n\n你的职责：\n1. 回答员工的工作问题\n2. 协助安排会议和任务\n3. 查询公司文档和信息\n4. 提供技术支持和建议\n\n沟通风格：\n- 专业但不失亲切\n- 简洁高效\n- 善用飞书功能（卡片、@提醒等）\n\n公司信息：\n- 工作时间：周一至周五 9:00-18:00\n- 支持部门：技术、产品、运营、设计",
+    "temperature": 0.6,
+    "maxTokens": 3000
+  },
+  
+  "tools": {
+    "enabled": [
+      "feishu_get_user",
+      "feishu_search_user",
+      "feishu_chat",
+      "feishu_chat_members",
+      "feishu_im_user_message",
+      "feishu_im_user_get_messages",
+      "feishu_im_user_search_messages",
+      "feishu_calendar_calendar",
+      "feishu_calendar_event",
+      "feishu_calendar_freebusy",
+      "feishu_task_task",
+      "feishu_task_tasklist",
+      "feishu_bitable_app",
+      "feishu_bitable_app_table",
+      "feishu_bitable_app_table_record",
+      "feishu_search_doc_wiki",
+      "feishu_create_doc",
+      "feishu_update_doc",
+      "read",
+      "write",
+      "web_search"
+    ],
+    
+    "config": {
+      "feishu": {
+        "apiVersion": "2022-09-28",
+        "baseUrl": "https://open.feishu.cn/open-apis",
+        "timeout": 10000,
+        "retry": {
+          "enabled": true,
+          "maxAttempts": 3,
+          "delay": 1000
+        }
+      },
+      "calendar": {
+        "defaultDuration": 60,
+        "reminderMinutes": [15, 60],
+        "workingHours": {
+          "start": "09:00",
+          "end": "18:00",
+          "timezone": "Asia/Shanghai"
+        }
+      },
+      "task": {
+        "defaultDueHours": 24,
+        "autoAssign": true
+      }
+    }
+  },
+  
+  "routing": {
+    "enabled": true,
+    "rules": [
+      {
+        "name": "会议安排",
+        "agent": "default",
+        "tools": ["feishu_calendar_event", "feishu_calendar_freebusy"],
+        "conditions": {
+          "keywords": ["会议", "日程", "安排", "预约", "meeting", "calendar"]
+        }
+      },
+      {
+        "name": "任务管理",
+        "agent": "default",
+        "tools": ["feishu_task_task", "feishu_task_tasklist"],
+        "conditions": {
+          "keywords": ["任务", "待办", "todo", "assign", "负责人"]
+        }
+      },
+      {
+        "name": "文档查询",
+        "agent": "default",
+        "tools": ["feishu_search_doc_wiki", "feishu_fetch_doc"],
+        "conditions": {
+          "keywords": ["文档", "wiki", "知识库", "doc", "查找"]
+        }
+      },
+      {
+        "name": "找人",
+        "agent": "default",
+        "tools": ["feishu_search_user", "feishu_get_user"],
+        "conditions": {
+          "keywords": ["联系人", "找谁", "部门", "邮箱", "电话"]
+        }
+      }
+    ]
+  },
+  
+  "workspace": {
+    "path": "~/openclaw-workspace",
+    "autoCreate": true
+  },
+  
+  "session": {
+    "isolation": "user",
+    "storage": {
+      "type": "local",
+      "path": "~/.openclaw/sessions"
+    },
+    "context": {
+      "maxLength": 20,
+      "summary": {
+        "enabled": true,
+        "interval": 10
+      }
+    }
+  },
+  
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "output": {
+      "console": true,
+      "file": "~/.openclaw/logs/feishu.log"
+    }
+  },
+  
+  "security": {
+    "enableAuth": true,
+    "allowedUsers": [],
+    "allowedDepartments": [],
+    "rateLimit": {
+      "enabled": true,
+      "requests": 100,
+      "window": "1h"
+    }
+  }
+}

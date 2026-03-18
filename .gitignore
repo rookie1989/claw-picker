@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory
+coverage/
+.nyc_output/
+
+# Build output
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Config (optional - 如需共享配置可注释掉)
+# .openclaw/
+# config.json
+
+# Sessions
+sessions/
+*.session
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Testing
+test-results/
+playwright-report/
+
+# Misc
+*.bak
+*.tmp
+.cache/

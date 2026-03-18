@@ -1,0 +1,114 @@
+{
+  "_comment": "OpenClaw 配置示例 - WhatsApp + Telegram 双通道",
+  "_version": "1.0.0",
+  
+  "gateway": {
+    "port": 3000,
+    "host": "0.0.0.0",
+    "name": "My OpenClaw Gateway"
+  },
+  
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "name": "WhatsApp 主通道",
+      "settings": {
+        "maxMessageLength": 4096,
+        "enableMedia": true,
+        "enableGroups": true,
+        "readReceipts": true
+      }
+    },
+    "telegram": {
+      "enabled": true,
+      "name": "Telegram 助手",
+      "token": "${TELEGRAM_BOT_TOKEN}",
+      "settings": {
+        "enableCommands": true,
+        "commands": {
+          "/start": "欢迎使用 OpenClaw 助手",
+          "/help": "显示帮助信息",
+          "/status": "查看系统状态",
+          "/clear": "清除会话历史"
+        },
+        "enableMedia": true,
+        "enableGroups": false
+      }
+    }
+  },
+  
+  "agent": {
+    "model": "gpt-4",
+    "provider": "openai",
+    "apiKey": "${OPENAI_API_KEY}",
+    "systemPrompt": "你是一个专业、友好的 AI 助手。\n\n你的特点：\n1. 回答简洁明了，直击要点\n2. 遇到复杂问题会分步骤解释\n3. 主动询问澄清模糊的需求\n4. 提供实用的建议和示例\n\n你的专长：\n- 编程开发（Python, JavaScript, Go）\n- 系统运维（Linux, Docker, Kubernetes）\n- 数据分析与可视化\n\n始终保持专业和耐心的态度。",
+    "temperature": 0.7,
+    "maxTokens": 4000
+  },
+  
+  "tools": {
+    "enabled": [
+      "read",
+      "write",
+      "edit",
+      "exec",
+      "web_search",
+      "browser"
+    ],
+    "config": {
+      "exec": {
+        "allowedCommands": ["ls", "cat", "grep", "git"],
+        "workingDirectory": "~/openclaw-workspace"
+      },
+      "web_search": {
+        "engine": "brave",
+        "apiKey": "${BRAVE_SEARCH_API_KEY}",
+        "maxResults": 5
+      }
+    }
+  },
+  
+  "workspace": {
+    "path": "~/openclaw-workspace",
+    "autoCreate": true
+  },
+  
+  "session": {
+    "isolation": "channel",
+    "storage": {
+      "type": "local",
+      "path": "~/.openclaw/sessions"
+    },
+    "pruning": {
+      "enabled": true,
+      "maxAge": "30d",
+      "maxSessions": 100
+    }
+  },
+  
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "output": {
+      "console": true,
+      "file": "~/.openclaw/logs/gateway.log"
+    },
+    "rotation": {
+      "enabled": true,
+      "maxSize": "10MB",
+      "maxFiles": 5
+    }
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "metrics": {
+      "enabled": true,
+      "port": 9090
+    },
+    "healthCheck": {
+      "enabled": true,
+      "interval": "1m"
+    }
+  }
+}
