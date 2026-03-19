@@ -83,9 +83,10 @@ openclaw onboard
 - [技能开发教程](docs/advanced/skill-development.md) ⭐ NEW
 - [多智能体协作](docs/advanced/multi-agent-collaboration.md) ⭐ NEW
 
-### 🎬 视频教程
-- [安装教程视频脚本](docs/video-scripts/01-安装教程.md)
-- [5 分钟快速上手脚本](docs/video-scripts/02-5 分钟快速上手.md)
+### 📖 图文教程
+- [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
+- [⚡ 5 分钟快速上手](docs/tutorials/02-5 分钟快速上手.md) - 快速体验流程
+- [📋 配置文件速查](docs/入门指南/03-配置文件速查手册.md) - 配置项详解
 
 ### 💻 示例代码
 - [飞书集成示例](examples/feishu/) - 多维表格/日历/任务/文档
