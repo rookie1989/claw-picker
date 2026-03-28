@@ -1,362 +1,343 @@
-# 飞书 API 速查手册
+# 📋 飞书 API 速查表 - 扩展版
 
-> 快速查阅飞书 API 调用方式和参数
+快速查找飞书常用 API 和代码片段。
 
-## 多维表格 API
+## 🔑 认证方式
 
-### 创建应用
+### User Access Token（推荐）
+
 ```javascript
-feishu_bitable_app({
-  action: 'create',
-  name: '应用名称',
-  is_advanced: true
-})
+// OAuth 授权获取
+const token = await getAccessToken(code);
+
+// 使用 token 调用 API
+const headers = {
+  'Authorization': `Bearer ${token}`,
+  'Content-Type': 'application/json'
+};
 ```
 
-### 创建数据表
+### Tenant Access Token
+
 ```javascript
-feishu_bitable_app_table({
-  action: 'create',
-  app_token: 'bascnxxx',
-  table: {
-    name: '表名',
-    fields: [
-      { field_name: '字段名', type: 1 }  // 1=文本
-    ]
-  }
-})
+// 应用级 token（无需用户授权）
+const token = await fetch('https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal', {
+  method: 'POST',
+  body: JSON.stringify({
+    app_id: 'cli_xxx',
+    app_secret: 'xxx'
+  })
+});
 ```
 
-### 创建记录
-```javascript
-// 单条
-feishu_bitable_app_table_record({
-  action: 'create',
-  app_token: 'bascnxxx',
-  table_id: 'tblxxx',
-  fields: { '字段名': '值' }
-})
+## 📊 多维表格（Bitable）
 
-// 批量
-feishu_bitable_app_table_record({
-  action: 'batch_create',
-  app_token: 'bascnxxx',
-  table_id: 'tblxxx',
-  records: [{ fields: {} }, { fields: {} }]
-})
+### 获取表格列表
+
+```javascript
+GET https://open.feishu.cn/open-apis/bitable/v1/apps
 ```
 
 ### 查询记录
+
 ```javascript
-feishu_bitable_app_table_record({
-  action: 'list',
-  app_token: 'bascnxxx',
-  table_id: 'tblxxx',
-  filter: {
-    conjunction: 'and',
-    conditions: [
-      { field_name: '字段', operator: 'is', value: ['值'] }
-    ]
-  },
-  page_size: 500
-})
+GET https://open.feishu.cn/open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/records
+
+// 带筛选
+?filter={"conjunction":"and","conditions":[{"field_name":"状态","operator":"is","value":["进行中"]}]}
 ```
 
-### 字段类型
-| 代码 | 类型 | 代码 | 类型 |
-|-----|------|-----|------|
-| 1 | 文本 | 11 | 人员 |
-| 2 | 数字 | 13 | 电话 |
-| 3 | 单选 | 15 | 超链接 |
-| 4 | 多选 | 17 | 附件 |
-| 5 | 日期 | 1001 | 创建时间 |
-| 7 | 复选框 | 1002 | 修改时间 |
+### 创建记录
 
----
-
-## 日历 API
-
-### 创建日程
 ```javascript
-feishu_calendar_event({
-  action: 'create',
-  user_open_id: 'ou_xxx',  // 必填
-  summary: '标题',
-  start_time: '2026-03-20T14:00:00+08:00',
-  end_time: '2026-03-20T15:00:00+08:00',
-  attendees: [{ type: 'user', id: 'ou_xxx' }],
-  reminders: [{ minutes: 15 }],
-  vchat: { vc_type: 'vc' }
-})
+POST https://open.feishu.cn/open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/records
+
+{
+  "fields": {
+    "姓名": "张三",
+    "部门": "技术部",
+    "入职日期": 1703275200000
+  }
+}
 ```
+
+### 更新记录
+
+```javascript
+PUT https://open.feishu.cn/open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/records/{record_id}
+
+{
+  "fields": {
+    "状态": "已完成"
+  }
+}
+```
+
+### 字段类型对照
+
+| 类型 | 值类型 | 示例 |
+|------|--------|------|
+| 文本 (1) | string | `"张三"` |
+| 数字 (2) | number | `100` |
+| 单选 (3) | string | `"选项 A"` |
+| 多选 (4) | string[] | `["选项 A", "选项 B"]` |
+| 日期 (5) | number | `1703275200000` (毫秒时间戳) |
+| 复选框 (7) | boolean | `true` |
+| 人员 (11) | [{id}] | `[{"id": "ou_xxx"}]` |
+| 附件 (17) | [{file_token}] | `[{"file_token": "xxx"}]` |
+
+## 📅 日历（Calendar）
 
 ### 查询日程
+
 ```javascript
-feishu_calendar_event({
-  action: 'list',
-  user_open_id: 'ou_xxx',
-  start_time: '2026-03-18T00:00:00+08:00',
-  end_time: '2026-03-25T23:59:59+08:00'
-})
+GET https://open.feishu.cn/open-apis/calendar/v4/calendars/{calendar_id}/events
+
+// 时间范围
+?time_min=2026-03-28T00:00:00+08:00&time_max=2026-03-28T23:59:59+08:00
 ```
 
-### 忙闲查询
+### 创建日程
+
 ```javascript
-feishu_calendar_freebusy({
-  action: 'list',
-  time_min: '2026-03-20T09:00:00+08:00',
-  time_max: '2026-03-20T18:00:00+08:00',
-  user_ids: ['ou_xxx', 'ou_yyy']  // 最多 10 人
-})
+POST https://open.feishu.cn/open-apis/calendar/v4/calendars/{calendar_id}/events
+
+{
+  "summary": "团队站会",
+  "start_time": "2026-03-28T09:30:00+08:00",
+  "end_time": "2026-03-28T10:00:00+08:00",
+  "attendees": [
+    {"type": "user", "id": "ou_xxx"}
+  ],
+  "reminders": [
+    {"minutes": 15}
+  ]
+}
 ```
 
-### 重复日程 RRULE
+### 查询忙闲
+
 ```javascript
-// 每天重复
-recurrence: 'FREQ=DAILY;INTERVAL=1'
+POST https://open.feishu.cn/open-apis/calendar/v4/freebusy/list
 
-// 每周重复（每周五）
-recurrence: 'FREQ=WEEKLY;INTERVAL=1;BYDAY=FR'
-
-// 每月重复（每月 1 号）
-recurrence: 'FREQ=MONTHLY;INTERVAL=1;BYMONTHDAY=1'
+{
+  "time_min": "2026-03-28T00:00:00+08:00",
+  "time_max": "2026-03-28T23:59:59+08:00",
+  "user_ids": ["ou_xxx1", "ou_xxx2"]
+}
 ```
 
----
-
-## 任务 API
+## ✅ 任务（Task）
 
 ### 创建任务
+
 ```javascript
-feishu_task_task({
-  action: 'create',
-  current_user_id: 'ou_xxx',  // 强烈建议
-  summary: '任务标题',
-  description: '任务描述',
-  start: { timestamp: '2026-03-18T09:00:00+08:00', is_all_day: false },
-  due: { timestamp: '2026-03-20T18:00:00+08:00', is_all_day: false },
-  members: [
-    { id: 'ou_xxx', role: 'assignee' },  // 负责人
-    { id: 'ou_yyy', role: 'follower' }   // 关注人
+POST https://open.feishu.cn/open-apis/task/v1/tasks
+
+{
+  "summary": "完成项目报告",
+  "due": {
+    "timestamp": "2026-03-30T18:00:00+08:00"
+  },
+  "members": [
+    {"id": "ou_xxx", "role": "assignee"}
   ]
-})
+}
 ```
 
-### 完成任务
+### 查询任务
+
 ```javascript
-feishu_task_task({
-  action: 'patch',
-  task_guid: 'tascnxxx',
-  completed_at: new Date().toISOString()  // 或 '0' 反完成
-})
+GET https://open.feishu.cn/open-apis/task/v1/tasks
+
+// 筛选
+?completed=false&order_by=due&desc=true
 ```
 
-### 创建任务清单
+### 更新任务
+
 ```javascript
-feishu_task_tasklist({
-  action: 'create',
-  name: '清单名称',
-  members: [{ id: 'ou_xxx', role: 'editor' }]
-})
+PATCH https://open.feishu.cn/open-apis/task/v1/tasks/{task_guid}
+
+{
+  "completed": true,
+  "completed_at": "2026-03-28T10:00:00+08:00"
+}
 ```
 
-### 创建子任务
-```javascript
-feishu_task_subtask({
-  action: 'create',
-  task_guid: 'tascnxxx',
-  summary: '子任务标题',
-  due: { timestamp: '2026-03-20T18:00:00+08:00', is_all_day: false }
-})
-```
-
-### 添加评论
-```javascript
-feishu_task_comment({
-  action: 'create',
-  task_guid: 'tascnxxx',
-  content: '评论内容'
-})
-```
-
----
-
-## 文档 API
+## 📄 云文档（Doc）
 
 ### 创建文档
+
 ```javascript
-feishu_create_doc({
-  title: '文档标题',
-  markdown: '# 标题\n\n内容',
-  folder_token: 'fld_xxx',  // 可选
-  wiki_space: 'my_library'   // 可选
-})
+POST https://open.feishu.cn/open-apis/docx/v1/documents
+
+{
+  "title": "周报",
+  "folder_token": "fld_xxx"
+}
 ```
 
-### 更新文档
+### 获取内容
+
 ```javascript
-// 追加
-feishu_update_doc({
-  doc_id: 'docxxx',
-  mode: 'append',
-  markdown: '\n## 新增章节'
-})
-
-// 覆盖
-feishu_update_doc({
-  doc_id: 'docxxx',
-  mode: 'overwrite',
-  markdown: '# 新内容'
-})
-
-// 定位替换
-feishu_update_doc({
-  doc_id: 'docxxx',
-  mode: 'replace_range',
-  markdown: '新内容',
-  selection_with_ellipsis: '旧内容开头...旧内容结尾'
-})
+GET https://open.feishu.cn/open-apis/docx/v1/documents/{document_id}/raw_content
 ```
 
-### 添加评论
+### 更新内容
+
 ```javascript
-feishu_doc_comments({
-  action: 'create',
-  file_token: 'docxxx',
-  file_type: 'docx',
-  elements: [
-    { type: 'text', text: '评论内容' },
-    { type: 'mention', open_id: 'ou_xxx', text: '@用户' }
+POST https://open.feishu.cn/open-apis/docx/v1/documents/{document_id}/blocks/{block_id}/children
+
+{
+  "blocks": [
+    {
+      "block_type": "text",
+      "text": {
+        "elements": [
+          {"text_run": {"content": "新内容"}}
+        ]
+      }
+    }
   ]
-})
+}
 ```
+
+## 👥 用户与群组
+
+### 搜索用户
+
+```javascript
+GET https://open.feishu.cn/open-apis/contact/v3/users/batch_get_id
+
+// 按邮箱
+{
+  "emails": ["zhangsan@example.com"],
+  "user_id_type": "open_id"
+}
+```
+
+### 获取用户信息
+
+```javascript
+GET https://open.feishu.cn/open-apis/contact/v3/users/{user_id}
+
+?user_id_type=open_id
+```
+
+### 搜索群组
+
+```javascript
+GET https://open.feishu.cn/open-apis/im/v1/chats
+
+?query=技术部&page_size=20
+```
+
+### 发送消息
+
+```javascript
+POST https://open.feishu.cn/open-apis/im/v1/messages
+
+{
+  "receive_id": "ou_xxx",
+  "msg_type": "text",
+  "content": "{\"text\":\"你好\"}"
+}
+```
+
+## 🔍 搜索
 
 ### 搜索文档
+
 ```javascript
-feishu_search_doc_wiki({
-  action: 'search',
-  query: '关键词',
-  filter: {
-    doc_types: ['DOC', 'DOCX'],
-    creator_ids: ['ou_xxx'],
-    sort_type: 'EDIT_TIME'
+POST https://open.feishu.cn/open-apis/drive/v1/search
+
+{
+  "query": "项目报告",
+  "doc_types": ["DOC", "SHEET"],
+  "page_size": 20
+}
+```
+
+### 搜索消息
+
+```javascript
+GET https://open.feishu.cn/open-apis/im/v1/messages/search
+
+?query=关键词&sender_id=ou_xxx
+```
+
+## 📝 常用代码片段
+
+### 完整 API 调用示例
+
+```javascript
+async function feishuAPI(endpoint, method = 'GET', body = null) {
+  const token = await getAccessToken();
+  
+  const response = await fetch(`https://open.feishu.cn${endpoint}`, {
+    method,
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
+    body: body ? JSON.stringify(body) : null
+  });
+  
+  if (!response.ok) {
+    throw new Error(`API Error: ${response.status}`);
   }
-})
+  
+  return response.json();
+}
+
+// 使用
+const events = await feishuAPI('/open-apis/calendar/v4/calendars/primary/events');
 ```
 
----
-
-## 常用运算符
-
-### 筛选条件 operator
-- `is` - 等于
-- `isNot` - 不等于
-- `contains` - 包含
-- `doesNotContain` - 不包含
-- `isEmpty` - 为空
-- `isNotEmpty` - 不为空
-- `isGreater` - 大于
-- `isGreaterEqual` - 大于等于
-- `isLess` - 小于
-- `isLessEqual` - 小于等于
-
----
-
-## 时间格式
-
-所有时间使用 ISO 8601 / RFC 3339 格式，**必须包含时区**：
+### 错误处理
 
 ```javascript
-// ✅ 正确
-'2026-03-20T14:00:00+08:00'
-
-// ❌ 错误
-'2026-03-20T14:00:00'
+try {
+  const result = await feishuAPI('/endpoint', 'POST', data);
+} catch (error) {
+  if (error.code === 99991663) {
+    console.error('票据过期，请重新授权');
+  } else if (error.code === 99991661) {
+    console.error('权限不足');
+  } else {
+    console.error(`API 错误：${error.message}`);
+  }
+}
 ```
 
-日期字段（多维表格）使用毫秒时间戳：
+### 分页处理
 
 ```javascript
-Date.now()  // 1742284800000
-new Date('2026-03-20').getTime()
-```
-
----
-
-## 分页处理
-
-```javascript
-async function listAllRecords(appToken, tableId) {
-  const allRecords = [];
+async function fetchAll(endpoint) {
+  const all = [];
   let pageToken = null;
   
   do {
-    const result = await feishu_bitable_app_table_record({
-      action: 'list',
-      app_token: appToken,
-      table_id: tableId,
-      page_size: 500,
-      page_token: pageToken
-    });
+    const url = pageToken 
+      ? `${endpoint}?page_token=${pageToken}`
+      : endpoint;
     
-    allRecords.push(...result.records);
-    pageToken = result.page_token;
+    const result = await feishuAPI(url);
+    all.push(...result.data.items);
+    pageToken = result.data.page_token;
   } while (pageToken);
   
-  return allRecords;
+  return all;
 }
 ```
+
+## 📮 更多资源
+
+- [飞书开放平台](https://open.feishu.cn/)
+- [API 文档](https://open.feishu.cn/document/)
+- [OpenClaw 飞书技能](../../skills/feishu-bitable/SKILL.md)
 
 ---
 
-## 错误码
-
-| 错误码 | 说明 | 处理方式 |
-|-------|------|---------|
-| 400 | 请求参数错误 | 检查参数格式 |
-| 401 | 未授权 | 检查 token |
-| 403 | 权限不足 | 申请权限 |
-| 404 | 资源不存在 | 检查 ID |
-| 409 | 冲突（如时间冲突） | 调整参数 |
-| 429 | 请求限流 | 等待后重试 |
-| 500 | 服务器错误 | 稍后重试 |
-
----
-
-## 最佳实践
-
-### 1. 批量操作优先
-```javascript
-// ✅ 推荐
-await feishu_bitable_app_table_record({
-  action: 'batch_create',
-  records: items.map(i => ({ fields: i }))
-})
-
-// ❌ 避免
-for (const item of items) {
-  await feishu_bitable_app_table_record({
-    action: 'create',
-    fields: item
-  })
-}
-```
-
-### 2. 错误处理
-```javascript
-try {
-  const result = await feishu_task_task({ ... });
-} catch (error) {
-  if (error.code === 429) {
-    await sleep(1000);
-    // 重试
-  } else {
-    throw error;
-  }
-}
-```
-
-### 3. 必传参数
-- 创建日程：`user_open_id`（否则用户看不到）
-- 创建任务：`current_user_id`（确保创建者可编辑）
-- 时间参数：必须包含时区 `+08:00`
+_最后更新：2026-03-28_
