@@ -1,227 +1,96 @@
-# 飞书集成示例代码
+# 📋 飞书集成示例
 
-> 完整的飞书 API 使用示例，可直接运行或作为参考
+本目录提供飞书（Feishu/Lark）深度集成的完整示例代码。
 
-## 示例列表
+## 📁 示例列表
 
-### 1. 多维表格示例
+| 示例 | 功能 | 难度 | 文件 |
+|------|------|------|------|
+| 多维表格项目跟踪器 | 自动创建/更新项目记录 | ⭐⭐ | `bitable-project-tracker.js` |
+| 日历会议调度器 | 智能安排会议时间 | ⭐⭐⭐ | `calendar-meeting-scheduler.js` |
+| 文档周报生成器 | 自动生成周报文档 | ⭐⭐ | `doc-weekly-report.js` |
+| 任务项目管理器 | 创建/分配/跟踪任务 | ⭐⭐ | `task-project-manager.js` |
 
-**[bitable-project-tracker.js](./bitable-project-tracker.js)** - 项目任务追踪
+## 🚀 快速开始
 
-功能：
-- ✅ 创建项目追踪多维表格
-- ✅ 定义字段结构（文本、人员、日期、单选等）
-- ✅ 批量创建任务记录
-- ✅ 查询任务统计
-- ✅ 筛选高优先级任务
+### 1. 配置飞书应用
 
-运行：
-```bash
-node examples/feishu/bitable-project-tracker.js
-```
+在飞书开放平台创建应用，获取以下权限：
+- 多维表格
+- 日历
+- 任务
+- 云文档
 
-### 2. 日历示例
-
-**[calendar-meeting-scheduler.js](./calendar-meeting-scheduler.js)** - 智能会议安排
-
-功能：
-- ✅ 搜索用户 open_id
-- ✅ 查询参会人忙闲状态
-- ✅ 自动寻找最佳会议时间
-- ✅ 创建会议日程
-- ✅ 添加参会人
-- ✅ 支持重复会议
-
-运行：
-```bash
-node examples/feishu/calendar-meeting-scheduler.js
-```
-
-### 3. 任务示例
-
-**[task-project-manager.js](./task-project-manager.js)** - 项目任务管理
-
-功能：
-- ✅ 创建任务清单
-- ✅ 创建项目任务结构（主任务 + 子任务）
-- ✅ 添加任务评论
-- ✅ 查询任务列表
-- ✅ 完成任务
-- ✅ 任务统计
-
-运行：
-```bash
-node examples/feishu/task-project-manager.js
-```
-
-### 4. 文档示例
-
-**[doc-weekly-report.js](./doc-weekly-report.js)** - 自动周报生成
-
-功能：
-- ✅ 查询本周完成任务
-- ✅ 查询本周会议
-- ✅ 查询进行中任务
-- ✅ 生成周报 Markdown 内容
-- ✅ 创建周报文档
-- ✅ 发送周报通知（可选）
-
-运行：
-```bash
-node examples/feishu/doc-weekly-report.js
-```
-
-## 配置说明
-
-### 1. 安装依赖
+### 2. 安装依赖
 
 ```bash
-npm install @openclaw/feishu
+npm install @openclaw/lark
 ```
 
-### 2. 配置飞书凭证
+### 3. 配置凭证
 
-在运行示例前，需要配置飞书 API 凭证：
+在 `~/.openclaw/config.json` 中添加：
 
-```javascript
-// 方式 1：修改示例文件中的 CONFIG
-const CONFIG = {
-  userOpenId: 'ou_xxxxxxxxxxxxx',  // 你的 open_id
-  // ...
-};
-
-// 方式 2：使用环境变量
-process.env.FEISHU_APP_ID = 'cli_xxxxxxxxxxxxx';
-process.env.FEISHU_APP_SECRET = 'xxxxxxxxxxxxx';
-```
-
-### 3. 获取用户 open_id
-
-```bash
-# 方法 1：通过飞书搜索
-node -e "
-const { feishu_search_user } = require('@openclaw/feishu');
-feishu_search_user({ query: '你的姓名' })
-  .then(r => console.log(r.users[0].open_id));
-"
-
-# 方法 2：获取当前用户
-node -e "
-const { feishu_get_user } = require('@openclaw/feishu');
-feishu_get_user()
-  .then(r => console.log(r.user.open_id));
-"
-```
-
-## 代码结构
-
-每个示例文件都包含：
-
-1. **配置部分** - 替换为你的实际配置
-2. **功能函数** - 可复用的功能模块
-3. **主函数** - 完整的业务流程
-4. **使用示例** - 直接运行的示例代码
-
-## 最佳实践
-
-### 1. 错误处理
-
-```javascript
-try {
-  const result = await feishu_task_task({ ... });
-} catch (error) {
-  if (error.code === 429) {
-    // 限流，等待后重试
-    await sleep(1000);
-    return retry();
-  } else if (error.code === 403) {
-    // 权限不足
-    console.error('请检查 API 权限配置');
-  } else {
-    throw error;
+```json
+{
+  "plugins": {
+    "feishu": {
+      "appId": "cli_xxx",
+      "appSecret": "xxx",
+      "userToken": "u-xxx"
+    }
   }
 }
 ```
 
-### 2. 批量操作
+### 4. 运行示例
 
-```javascript
-// ✅ 推荐：批量创建
-await feishu_bitable_app_table_record({
-  action: 'batch_create',
-  records: items.map(i => ({ fields: i }))
-});
-
-// ❌ 避免：逐条创建
-for (const item of items) {
-  await feishu_bitable_app_table_record({
-    action: 'create',
-    fields: item
-  });
-}
+```bash
+node examples/feishu/bitable-project-tracker.js
 ```
 
-### 3. 分页查询
+## 📖 详细文档
 
-```javascript
-async function listAllRecords(appToken, tableId) {
-  const allRecords = [];
-  let pageToken = null;
-  
-  do {
-    const result = await feishu_bitable_app_table_record({
-      action: 'list',
-      app_token: appToken,
-      table_id: tableId,
-      page_size: 500,
-      page_token: pageToken
-    });
-    
-    allRecords.push(...result.records);
-    pageToken = result.page_token;
-  } while (pageToken);
-  
-  return allRecords;
-}
-```
+- [飞书基础集成指南](../../docs/feishu-integration/basic/README.md)
+- [实战工作流](../../docs/feishu-integration/workflows/README.md)
+- [飞书 API 速查表](../../docs/cheatsheets/feishu-api-cheatsheet.md)
 
-## 相关文档
+## 💡 使用场景
 
-- 📖 [飞书多维表格集成教程](../../docs/feishu-integration/basic/bitable-integration.md)
-- 📖 [飞书日历集成教程](../../docs/feishu-integration/basic/calendar-integration.md)
-- 📖 [飞书任务集成教程](../../docs/feishu-integration/basic/task-integration.md)
-- 📖 [飞书文档集成教程](../../docs/feishu-integration/basic/doc-integration.md)
-- 📖 [飞书 API 速查手册](../../docs/cheatsheets/feishu-api-cheatsheet.md)
+### 项目管理
+- 自动同步 GitHub Issue 到飞书多维表格
+- 每日站会自动生成任务更新
+- 项目进度可视化看板
 
-## 常见问题
+### 会议管理
+- 根据参会人忙闲自动安排会议
+- 会议纪要自动生成并分发
+- 会议提醒和跟进任务创建
 
-### Q: 如何调试？
+### 文档协作
+- 周报/月报自动生成
+- 文档评论自动回复
+- 知识库自动归档
 
-**A:** 开启调试日志：
+## 🔧 自定义
 
-```javascript
-process.env.DEBUG = 'feishu:*';
-```
+每个示例都包含详细的注释，你可以根据需求修改：
+- API 调用参数
+- 触发条件
+- 数据格式
+- 通知渠道
 
-### Q: 触发限流怎么办？
+## ❓ 常见问题
 
-**A:** 
-1. 使用批量操作减少 API 调用
-2. 添加延迟：`await sleep(100)`
-3. 实现重试机制
+**Q: 如何获取 userToken？**  
+A: 使用 OAuth 授权流程，或通过飞书开放平台的"用户身份凭证"获取。
 
-### Q: 如何获取用户 open_id？
+**Q: 示例代码报错 "permission denied"？**  
+A: 检查飞书应用是否开通了相应 API 权限，并确保用户已授权。
 
-**A:** 
-- 使用 `feishu_search_user` 搜索姓名/手机号/邮箱
-- 从消息上下文的 `SenderId` 获取
-- 使用 `feishu_get_user` 获取当前用户
+**Q: 如何调试？**  
+A: 在代码开头添加 `console.log()` 输出，或查看 `~/.openclaw/logs/` 日志文件。
 
-## 贡献
+## 📮 反馈
 
-欢迎提交更多示例代码！
-
-- 📝 示例代码应包含完整注释
-- 📝 提供清晰的使用说明
-- 📝 包含错误处理
-- 📝 遵循最佳实践
+遇到问题？提交 [Issue](https://github.com/rookie1989/claw-picker/issues)
