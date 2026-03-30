@@ -91,11 +91,14 @@ openclaw onboard
 - [数据持久化与备份](docs/advanced/data-persistence.md) - SQLite/PostgreSQL/PITR ⭐ NEW
 - [性能调优专题](docs/advanced/performance-tuning.md) - 缓存/连接池/限流/熔断 ⭐ NEW
 - [多智能体协作](docs/advanced/multi-agent.md) - Pipeline/并行/动态路由编排 ⭐ NEW
+- [OpenTelemetry 分布式追踪](docs/advanced/opentelemetry.md) - 全链路可观测性/Jaeger/Grafana Tempo ⭐ NEW
 
 ### 🔧 运维指南
 - [监控与告警系统搭建](docs/guides/监控与告警系统搭建.md) - Prometheus + Grafana + AlertManager ⭐ NEW
 - [微信公众号集成指南](docs/guides/微信公众号集成指南.md) - 服务号双向对话/模板消息 ⭐ NEW
 - [小程序 & H5 集成指南](docs/guides/小程序H5集成指南.md) - 微信小程序/移动 H5 AI 接入 ⭐ NEW
+- [微信支付集成指南](docs/guides/微信支付集成指南.md) - JSAPI/Native/H5 支付 + AI 智能收款 ⭐ NEW
+- [故障排查 Runbook](docs/guides/故障排查Runbook.md) - 10 大故障场景完整排查手册 ⭐ NEW
 
 ### 📖 图文教程
 - [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
@@ -152,7 +155,10 @@ openclaw onboard
 - ✅ **钉钉集成**: 群机器人/Stream 模式/工作通知
 - ✅ **高可用部署**: 多节点/负载均衡/零停机更新
 - ✅ **监控告警**: Prometheus + Grafana + AlertManager
-- ✅ **丰富示例**: 30+ 实用示例代码
+- ✅ **分布式追踪**: OpenTelemetry + Jaeger/Grafana Tempo 全链路可观测
+- ✅ **微信支付**: JSAPI/Native/H5 支付 + AI 智能收款助手
+- ✅ **故障 Runbook**: 10 大故障场景完整排查手册
+- ✅ **丰富示例**: 40+ 实用示例代码
 - ✅ **场景化指南**: 个人/团队/客服/企业多种场景
 
 ## 🤝 参与贡献
@@ -183,19 +189,42 @@ openclaw onboard
 
 ## 📊 仓库统计
 
-- 📁 文件数量：120+
-- 📝 文档页数：130+
+- 📁 文件数量：130+
+- 📝 文档页数：145+
 - 💻 示例代码：40+
-- ⭐ 最近更新：2026-03-30 11:03
+- ⭐ 最近更新：2026-03-30 11:25
 
 ## 📝 更新日志
 
-### 2026-03-30 阶段六（持续更新中）
+### 2026-03-30 阶段七（持续更新中）
 
-**11:03 本次更新**：
-- 📁 新增文件：10+
-- 📝 新增文档：6 篇
-- 💻 新增示例：Notion 完整示例（notion-sync.js）
+**11:25 本次更新**：
+- 📁 新增文件：6
+- 📝 新增文档：5 篇（均为深度长文）
+- 💻 新增示例：英文版入门指南
+- 🔄 Git 提交：第 22 次
+
+**本次新增内容**：
+
+✅ **英文版入门指南**
+- `docs/getting-started/quickstart.en.md` — 完整英文快速上手（含 Telegram/WhatsApp/Discord/Slack 四大渠道）
+
+✅ **视频脚本**
+- 第 8 集：性能调优实战（22 分钟脚本，展示延迟从 8s→1.2s 的全过程）
+
+✅ **支付集成**
+- 微信支付集成指南（JSAPI/Native/H5 三种支付方式 + AI 智能收款 Skill 完整代码）
+
+✅ **可观测性**
+- OpenTelemetry 分布式追踪集成（全链路埋点 + Jaeger/Tempo + 采样策略 + 实战案例）
+
+✅ **运维手册**
+- 故障排查 Runbook（10 大故障场景，每个场景含诊断命令/根因分析/修复步骤/预防措施）
+
+### 2026-03-30 阶段六
+
+**11:03 更新（第 21 次提交）**：
+- Notion 完整示例（notion-sync.js）
 - 🔄 Git 提交：第 21 次
 
 **本次新增内容**：

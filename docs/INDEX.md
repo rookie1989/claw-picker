@@ -25,6 +25,8 @@
 | [监控与告警系统](guides/监控与告警系统搭建.md) | Prometheus + Grafana | ⭐⭐⭐⭐ |
 | [微信公众号集成](guides/微信公众号集成指南.md) | 服务号双向对话/模板消息 | ⭐⭐⭐ |
 | [小程序 & H5 集成](guides/小程序H5集成指南.md) | 微信小程序/云函数/流式 | ⭐⭐⭐ |
+| [微信支付集成](guides/微信支付集成指南.md) | JSAPI/Native/H5 + AI 智能收款 | ⭐⭐⭐⭐ |
+| [故障排查 Runbook](guides/故障排查Runbook.md) | 10 大故障场景完整排查手册 | ⭐⭐⭐⭐ |
 
 ## 🎓 进阶教程
 
@@ -41,6 +43,7 @@
 | [数据持久化与备份](advanced/data-persistence.md) | PostgreSQL/PITR/云同步 | ⭐⭐⭐⭐ |
 | [性能调优专题](advanced/performance-tuning.md) | 缓存/连接池/熔断降级 | ⭐⭐⭐⭐ |
 | [多智能体协作](advanced/multi-agent.md) | Pipeline/并行/动态路由 | ⭐⭐⭐⭐⭐ |
+| [OpenTelemetry 分布式追踪](advanced/opentelemetry.md) | 全链路可观测/Jaeger/Tempo | ⭐⭐⭐⭐ |
 
 ## 📖 图文教程
 
@@ -66,8 +69,7 @@
 
 ### Notion 集成
 - [README](examples/notion/README.md)
-- 页面创建器（计划）
-- 数据库管理器（计划）
+- notion-sync.js — 批量 AI 摘要/知识库问答/消息→Notion/每日报告
 
 ### 技能示例
 - [README](examples/skills/README.md)
@@ -159,4 +161,4 @@ docs/
 
 ---
 
-_最后更新：2026-03-30 11:03_
+_最后更新：2026-03-30 11:25_
