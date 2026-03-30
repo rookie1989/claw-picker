@@ -28,6 +28,7 @@
 | [微信支付集成](guides/微信支付集成指南.md) | JSAPI/Native/H5 + AI 智能收款 | ⭐⭐⭐⭐ |
 | [故障排查 Runbook](guides/故障排查Runbook.md) | 10 大故障场景完整排查手册 | ⭐⭐⭐⭐ |
 | [Personal AI Assistant (EN)](guides/personal-assistant-guide.en.md) | Telegram/WhatsApp/Discord/Slack | ⭐⭐ |
+| [Team Bot for Organizations (EN)](guides/team-bot-guide.en.md) | Slack/Teams/Feishu/WeCom 多平台 | ⭐⭐⭐⭐ |
 
 ## 🎓 进阶教程
 
@@ -47,6 +48,8 @@
 | [OpenTelemetry 分布式追踪](advanced/opentelemetry.md) | 全链路可观测/Jaeger/Tempo | ⭐⭐⭐⭐ |
 | [多模型智能路由](advanced/multi-model-routing.md) | 按类型/成本/延迟自动择优 | ⭐⭐⭐⭐ |
 | [企业级 RBAC 权限系统](advanced/rbac-permission-system.md) | 多租户/角色/配额/审计 | ⭐⭐⭐⭐⭐ |
+| [RAG 知识库集成](advanced/rag-knowledge-base.md) | 向量搜索/Pinecone/混合检索 | ⭐⭐⭐⭐⭐ |
+| [Kubernetes 生产部署](advanced/kubernetes-deployment.md) | HPA/Rolling Update/多区域高可用 | ⭐⭐⭐⭐⭐ |
 
 ## 📖 图文教程
 
@@ -130,6 +133,7 @@
 | 07 | 高可用部署 + 监控告警 | ✅ 完成 |
 | 08 | 性能调优实战（P99 8s→1.2s）| ✅ 完成 |
 | 09 | 微信支付实战（AI 收款）| ✅ 完成 |
+| 10 | RBAC 权限实战（多租户权限管控）| ✅ 完成 |
 
 [视频脚本](video-scripts/README.md)
 

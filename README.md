@@ -94,6 +94,8 @@ openclaw onboard
 - [OpenTelemetry 分布式追踪](docs/advanced/opentelemetry.md) - 全链路可观测性/Jaeger/Grafana Tempo ⭐ NEW
 - [多模型智能路由](docs/advanced/multi-model-routing.md) - 按类型/成本/延迟自动选模型（节省 85% 费用）⭐ NEW
 - [企业级 RBAC 权限系统](docs/advanced/rbac-permission-system.md) - 多租户/角色/配额/审计完整方案 ⭐ NEW
+- [RAG 知识库集成](docs/advanced/rag-knowledge-base.md) - 向量搜索 + Pinecone/Chroma + 混合检索 ⭐ NEW
+- [Kubernetes 生产部署](docs/advanced/kubernetes-deployment.md) - HPA + Rolling Update + 多区域高可用 ⭐ NEW
 
 ### 🔧 运维指南
 - [监控与告警系统搭建](docs/guides/监控与告警系统搭建.md) - Prometheus + Grafana + AlertManager ⭐ NEW
@@ -102,6 +104,7 @@ openclaw onboard
 - [微信支付集成指南](docs/guides/微信支付集成指南.md) - JSAPI/Native/H5 支付 + AI 智能收款 ⭐ NEW
 - [故障排查 Runbook](docs/guides/故障排查Runbook.md) - 10 大故障场景完整排查手册 ⭐ NEW
 - [个人 AI 助理搭建指南（英文）](docs/guides/personal-assistant-guide.en.md) - Telegram/WhatsApp/Discord/Slack ⭐ NEW
+- [团队 Bot 部署指南（英文）](docs/guides/team-bot-guide.en.md) - Slack/Teams/Feishu/WeCom 多平台 ⭐ NEW
 
 ### 📖 图文教程
 - [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
@@ -163,6 +166,8 @@ openclaw onboard
 - ✅ **故障 Runbook**: 10 大故障场景完整排查手册
 - ✅ **智能路由**: 多模型动态路由，按任务类型/成本/延迟自动择优（节省 85%）
 - ✅ **RBAC 权限**: 多租户/角色/配额/审计全套企业权限管控
+- ✅ **RAG 知识库**: 向量搜索 + 混合检索，让 AI 真正懂你的业务
+- ✅ **K8s 部署**: HPA 自动扩缩容 + Rolling Update 零宕机升级
 - ✅ **丰富示例**: 40+ 实用示例代码
 - ✅ **场景化指南**: 个人/团队/客服/企业多种场景（含英文版）
 
@@ -194,33 +199,38 @@ openclaw onboard
 
 ## 📊 仓库统计
 
-- 📁 文件数量：145+
-- 📝 文档页数：165+
+- 📁 文件数量：160+
+- 📝 文档页数：185+
 - 💻 示例代码：40+
-- ⭐ 最近更新：2026-03-30 11:52
+- ⭐ 最近更新：2026-03-30 12:20
 
 ## 📝 更新日志
 
-### 2026-03-30 阶段八（持续更新中）
+### 2026-03-30 阶段九（持续更新中）
 
-**11:52 本次更新**：
+**12:20 本次更新**：
 - 📁 新增文件：4
 - 📝 新增文档：4 篇（均为深度长文）
-- 🎬 新增视频脚本：第 9 集
-- 🌐 新增英文文档：Personal AI Assistant Guide
-- 🔄 Git 提交：第 23 次
+- 🎬 新增视频脚本：第 10 集
+- 🌐 新增英文文档：Team Bot Guide for Organizations
+- 🔄 Git 提交：第 24 次
 
 **本次新增内容**：
 
-✅ **英文场景指南**
-- `docs/guides/personal-assistant-guide.en.md` — 个人 AI 助理英文完整指南（Telegram/WhatsApp/Discord/Slack + 6 大 Skill + 生产部署 + 安全加固）
+✅ **英文企业级 Bot 指南**
+- `docs/guides/team-bot-guide.en.md` — Slack/Teams/Feishu/WeCom 四平台完整代码 + 统一路由 + RBAC + 管理后台 + Docker Compose 生产部署
 
 ✅ **视频脚本**
-- 第 9 集：微信支付实战（24 分钟脚本，JSAPI/Native/H5 三种方式 + AI 收款 Skill + 回调幂等处理）
+- 第 10 集：RBAC 权限实战（26 分钟脚本，7 张表 Schema + 权限中间件 + 配额管理 + 审计日志 + CLI 工具）
 
 ✅ **进阶教程**
-- 多模型智能路由（意图识别 + 成本计算 + 延迟感知 + 降级策略，实测节省 85% 费用）
-- 企业级 RBAC 权限系统（完整 DB Schema + 权限检查 + 配额管理 + 审计日志 + CLI 工具）
+- RAG 知识库集成（文档解析/递归分块/混合检索/Pinecone+Chroma/Prompt 工程/增量更新/效果评估）
+- Kubernetes 生产部署（多阶段镜像/HPA 自动扩缩/Rolling Update/Canary 发布/多区域高可用）
+
+### 2026-03-30 阶段八
+
+**11:52 更新（第 23 次提交）**：
+- 英文个人助理指南 + 视频9微信支付 + 多模型路由 + RBAC权限系统
 
 ### 2026-03-30 阶段七
 
