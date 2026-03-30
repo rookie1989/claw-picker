@@ -10,7 +10,7 @@ Before you begin, make sure you have:
 
 | Requirement | Details |
 |-------------|---------|
-| **OpenClaw installed** | See [Installation Guide](installation.en.md) |
+| **OpenClaw installed** | Run `npm install -g openclaw` first |
 | **AI model API key** | OpenAI / Anthropic / Google Gemini / any OpenAI-compatible provider |
 | **A supported chat app** | WhatsApp, Telegram, Discord, Slack, WeChat Work, or DingTalk |
 | **Node.js ≥ 18** | `node --version` should print `v18.x` or higher |
@@ -209,22 +209,22 @@ openclaw gateway stop
 You are up and running! Here are the recommended paths forward:
 
 ### I want to customize my AI assistant
-→ [Create Your First Bot](first-bot.en.md) — system prompts, personas, and skill sets
+→ [Create Your First Bot](first-bot.md) — system prompts, personas, and skill sets
 
 ### I want to connect multiple channels
 → [Multi-Channel Configuration](../advanced/multi-channel.md) — unified routing across WhatsApp + Slack + Discord
 
 ### I want to connect enterprise platforms
-→ [WeChat Work Integration](../guides/wecom-integration.md)  
-→ [DingTalk Integration](../guides/dingtalk-integration.md)  
-→ [Feishu / Lark Integration](../feishu-integration/README.md)
+→ [WeChat Work Integration Guide](../guides/企业微信集成指南.md)  
+→ [DingTalk Integration Guide](../guides/钉钉机器人集成指南.md)  
+→ [Feishu Integration](../feishu-integration/basic/calendar-quickstart.md)
 
 ### I want to build custom workflows
-→ [Plugin Development Guide](../advanced/plugin-development.md)  
+→ [Plugin Development Guide](../advanced/custom-plugins.md)  
 → [Multi-Agent Collaboration](../advanced/multi-agent.md)
 
 ### I want to go to production
-→ [High-Availability Deployment](../advanced/high-availability.md)  
+→ [High-Availability Deployment](../advanced/ha-deployment.md)  
 → [Performance Tuning](../advanced/performance-tuning.md)
 
 ---
@@ -239,7 +239,7 @@ You are up and running! Here are the recommended paths forward:
 | Telegram bot offline | Webhook conflict | `openclaw config channel telegram --reset-webhook` |
 | High latency (> 5 s) | Slow model or no connection pool | See [Performance Tuning](../advanced/performance-tuning.md) |
 
-For more detailed troubleshooting, see [FAQ — Troubleshooting](../FAQ/09-troubleshooting.md).
+For more detailed troubleshooting, see [FAQ — Troubleshooting](../FAQ/09-故障排查.md).
 
 ---
 

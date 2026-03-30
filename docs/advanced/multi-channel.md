@@ -432,3 +432,7 @@ openclaw sessions prune --older-than 30d
 ---
 
 **下一步**: 学习 [自定义插件开发](custom-plugins.md) 扩展更多功能！
+
+---
+
+> 📈 **进阶版** → [多渠道进阶](./multi-channel-advanced.md)：渠道级权限控制、消息路由策略、跨渠道会话同步

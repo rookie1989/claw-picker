@@ -658,7 +658,11 @@ module.exports = AgentTracer;
 
 ## 相关资源
 
-- [OpenClaw 快速入门](../getting-started/quick-start.md)
+- [OpenClaw 快速入门](../tutorials/02-5%20分钟快速上手.md)
 - [性能调优专题](performance-tuning.md)
 - [CI/CD 自动化部署](cicd-deployment.md)
-- [飞书深度集成](../feishu-integration/)
+- [飞书深度集成](../feishu-integration/workflows/README.md)
+
+---
+
+> 📈 **进阶版** → [多 Agent 协作进阶](./multi-agent-collaboration.md)：Pipeline 编排、并行执行、动态路由、实战案例
