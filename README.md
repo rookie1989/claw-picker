@@ -75,6 +75,9 @@ openclaw onboard
 - [团队 Bot 搭建指南](docs/guides/团队 Bot 搭建指南.md) - 小团队 AI 协作方案
 - [客服机器人搭建指南](docs/guides/客服机器人搭建指南.md) - 7x24 小时智能客服
 - [远程部署指南](docs/guides/远程部署指南.md) - 云服务器/Docker 部署
+- [企业微信集成指南](docs/guides/企业微信集成指南.md) - 企业微信群机器人/应用接入 ⭐ NEW
+- [Slack 集成指南](docs/guides/Slack集成指南.md) - Slack Bot + Slash Commands ⭐ NEW
+- [钉钉机器人集成指南](docs/guides/钉钉机器人集成指南.md) - 钉钉群机器人/企业应用 ⭐ NEW
 
 ### 🎓 进阶教程
 - [多通道配置](docs/advanced/multi-channel.md)
@@ -82,6 +85,10 @@ openclaw onboard
 - [智能体路由策略](docs/advanced/agent-routing.md)
 - [技能开发教程](docs/advanced/skill-development.md) ⭐ NEW
 - [多智能体协作](docs/advanced/multi-agent-collaboration.md) ⭐ NEW
+- [API 网关高可用部署](docs/advanced/ha-deployment.md) - Docker 多节点/Nginx 负载均衡 ⭐ NEW
+
+### 🔧 运维指南
+- [监控与告警系统搭建](docs/guides/监控与告警系统搭建.md) - Prometheus + Grafana + AlertManager ⭐ NEW
 
 ### 📖 图文教程
 - [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
@@ -95,6 +102,8 @@ openclaw onboard
 - [定时任务示例](examples/cron/) - 日报/周报自动生成
 - [技能示例](examples/skills/) - 天气查询/智能提醒 ⭐ NEW
 - [数据库同步示例](examples/database/) ⭐ NEW
+- [企业微信示例](examples/wecom/) - 群机器人/消息推送/告警通知 ⭐ NEW
+- [Slack 示例](examples/slack/) - Block Kit/Slash Commands/周报 ⭐ NEW
 
 ### 📖 飞书深度集成
 - [基础集成](docs/feishu-integration/basic/) - 多维表格/日历/任务/文档
@@ -117,15 +126,20 @@ openclaw onboard
 
 ## 🌟 特色功能
 
-- ✅ **多通道支持**: WhatsApp, Telegram, Discord, iMessage, 飞书等
+- ✅ **多通道支持**: WhatsApp, Telegram, Discord, iMessage, 飞书, 企业微信, Slack, 钉钉等
 - ✅ **自托管**: 运行在你的设备上，数据完全可控
 - ✅ **插件系统**: 可扩展的插件架构
 - ✅ **多智能体路由**: 支持多个 AI 助手同时工作
 - ✅ **Web 控制台**: 浏览器管理界面
 - ✅ **移动端支持**: iOS/Android 节点配对
 - ✅ **飞书深度集成**: 多维表格/日历/任务/文档
-- ✅ **丰富示例**: 20+ 实用示例代码
-- ✅ **场景化指南**: 个人/团队/客服多种场景
+- ✅ **企业微信集成**: 群机器人/自建应用/消息卡片
+- ✅ **Slack 集成**: Block Kit/Slash Commands/交互式卡片
+- ✅ **钉钉集成**: 群机器人/Stream 模式/工作通知
+- ✅ **高可用部署**: 多节点/负载均衡/零停机更新
+- ✅ **监控告警**: Prometheus + Grafana + AlertManager
+- ✅ **丰富示例**: 30+ 实用示例代码
+- ✅ **场景化指南**: 个人/团队/客服/企业多种场景
 
 ## 🤝 参与贡献
 
@@ -155,12 +169,37 @@ openclaw onboard
 
 ## 📊 仓库统计
 
-- 📁 文件数量：65+
-- 📝 文档页数：75+
-- 💻 示例代码：20+
-- ⭐ 最近更新：2026-03-28 21:00
+- 📁 文件数量：80+
+- 📝 文档页数：90+
+- 💻 示例代码：30+
+- ⭐ 最近更新：2026-03-30 10:00
 
 ## 📝 更新日志
+
+### 2026-03-30 阶段四（持续更新中）
+
+**10:00 本次更新**：
+- 📁 新增文件：10+
+- 📝 新增文档：5 篇（企业微信/Slack/钉钉/高可用/监控告警）
+- 💻 新增示例：4 个（企业微信/Slack 代码 + README）
+- 🔄 Git 提交：第 19 次
+
+**本次新增内容**：
+
+✅ **国内平台集成**
+- 企业微信集成指南（群机器人 + 自建应用，完整双向交互）
+- 钉钉机器人集成指南（Stream 模式，无需公网 IP）
+
+✅ **海外平台集成**
+- Slack 集成指南（Block Kit + Slash Commands + 交互卡片）
+
+✅ **运维体系**
+- API 网关高可用部署（Docker 多节点 + Nginx 负载均衡 + 零停机更新）
+- 监控与告警系统搭建（Prometheus + Grafana + AlertManager + Loki）
+
+✅ **示例代码**
+- `examples/wecom/wecom-bot.js` - 企业微信完整示例
+- `examples/slack/slack-bot.js` - Slack Bolt 框架示例
 
 ### 2026-03-28 阶段二 + 阶段三（✅ 100% 完成）
 

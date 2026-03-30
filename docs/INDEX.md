@@ -19,6 +19,10 @@
 | [团队 Bot 搭建](guides/团队 Bot 搭建指南.md) | 小团队 AI 协作方案 | ⭐⭐⭐ |
 | [客服机器人搭建](guides/客服机器人搭建指南.md) | 7x24 小时智能客服 | ⭐⭐⭐ |
 | [远程部署指南](guides/远程部署指南.md) | 云服务器/Docker 部署 | ⭐⭐⭐ |
+| [企业微信集成](guides/企业微信集成指南.md) | 群机器人/自建应用 | ⭐⭐⭐ |
+| [Slack 集成](guides/Slack集成指南.md) | Block Kit/Slash Commands | ⭐⭐⭐ |
+| [钉钉机器人集成](guides/钉钉机器人集成指南.md) | Stream 模式/工作通知 | ⭐⭐⭐ |
+| [监控与告警系统](guides/监控与告警系统搭建.md) | Prometheus + Grafana | ⭐⭐⭐⭐ |
 
 ## 🎓 进阶教程
 
@@ -29,6 +33,7 @@
 | [智能体路由策略](advanced/agent-routing.md) | 多 AI 助手协作 | ⭐⭐⭐ |
 | [技能开发教程](advanced/skill-development.md) | 创建自定义技能 | ⭐⭐ |
 | [多智能体协作](advanced/multi-agent-collaboration.md) | 复杂任务分解 | ⭐⭐⭐⭐ |
+| [高可用部署](advanced/ha-deployment.md) | 多节点/负载均衡/零停机 | ⭐⭐⭐⭐⭐ |
 
 ## 📖 图文教程
 
@@ -147,4 +152,4 @@ docs/
 
 ---
 
-_最后更新：2026-03-28_
+_最后更新：2026-03-30_
