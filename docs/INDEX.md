@@ -23,6 +23,7 @@
 | [Slack 集成](guides/Slack集成指南.md) | Block Kit/Slash Commands | ⭐⭐⭐ |
 | [钉钉机器人集成](guides/钉钉机器人集成指南.md) | Stream 模式/工作通知 | ⭐⭐⭐ |
 | [监控与告警系统](guides/监控与告警系统搭建.md) | Prometheus + Grafana | ⭐⭐⭐⭐ |
+| [微信公众号集成](guides/微信公众号集成指南.md) | 服务号双向对话/模板消息 | ⭐⭐⭐ |
 
 ## 🎓 进阶教程
 
@@ -34,6 +35,9 @@
 | [技能开发教程](advanced/skill-development.md) | 创建自定义技能 | ⭐⭐ |
 | [多智能体协作](advanced/multi-agent-collaboration.md) | 复杂任务分解 | ⭐⭐⭐⭐ |
 | [高可用部署](advanced/ha-deployment.md) | 多节点/负载均衡/零停机 | ⭐⭐⭐⭐⭐ |
+| [OAuth 2.0 鉴权](advanced/oauth-integration.md) | GitHub/Google/飞书 SSO | ⭐⭐⭐ |
+| [CI/CD 自动化部署](advanced/cicd-deployment.md) | GitHub Actions 全流水线 | ⭐⭐⭐⭐ |
+| [数据持久化与备份](advanced/data-persistence.md) | PostgreSQL/PITR/云同步 | ⭐⭐⭐⭐ |
 
 ## 📖 图文教程
 
@@ -152,4 +156,4 @@ docs/
 
 ---
 
-_最后更新：2026-03-30_
+_最后更新：2026-03-30 10:33_

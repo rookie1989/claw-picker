@@ -86,9 +86,13 @@ openclaw onboard
 - [技能开发教程](docs/advanced/skill-development.md) ⭐ NEW
 - [多智能体协作](docs/advanced/multi-agent-collaboration.md) ⭐ NEW
 - [API 网关高可用部署](docs/advanced/ha-deployment.md) - Docker 多节点/Nginx 负载均衡 ⭐ NEW
+- [OAuth 2.0 鉴权集成](docs/advanced/oauth-integration.md) - GitHub/Google/飞书/企微 SSO ⭐ NEW
+- [CI/CD 自动化部署](docs/advanced/cicd-deployment.md) - GitHub Actions 全流水线 ⭐ NEW
+- [数据持久化与备份](docs/advanced/data-persistence.md) - SQLite/PostgreSQL/PITR ⭐ NEW
 
 ### 🔧 运维指南
 - [监控与告警系统搭建](docs/guides/监控与告警系统搭建.md) - Prometheus + Grafana + AlertManager ⭐ NEW
+- [微信公众号集成指南](docs/guides/微信公众号集成指南.md) - 服务号双向对话/模板消息 ⭐ NEW
 
 ### 📖 图文教程
 - [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
@@ -104,6 +108,7 @@ openclaw onboard
 - [数据库同步示例](examples/database/) ⭐ NEW
 - [企业微信示例](examples/wecom/) - 群机器人/消息推送/告警通知 ⭐ NEW
 - [Slack 示例](examples/slack/) - Block Kit/Slash Commands/周报 ⭐ NEW
+- [钉钉示例](examples/dingtalk/) - Stream 模式/多轮对话/定时播报 ⭐ NEW
 
 ### 📖 飞书深度集成
 - [基础集成](docs/feishu-integration/basic/) - 多维表格/日历/任务/文档
@@ -112,6 +117,12 @@ openclaw onboard
 ### ❓ 常见问题
 - [安装问题](docs/FAQ/01-安装问题.md)
 - [配置问题](docs/FAQ/02-配置问题.md)
+- [渠道连接](docs/FAQ/03-渠道连接.md)
+- [AI 模型](docs/FAQ/04-AI 模型.md)
+- [性能优化](docs/FAQ/06-性能优化.md)
+- [安全加固](docs/FAQ/07-安全加固.md)
+- [故障排查](docs/FAQ/09-故障排查.md) ⭐ NEW
+- [升级迁移](docs/FAQ/10-升级迁移.md) ⭐ NEW
 - [渠道连接](docs/FAQ/03-渠道连接.md)
 - [AI 模型](docs/FAQ/04-AI 模型.md)
 - [工具使用](docs/FAQ/05-工具使用.md)
@@ -169,37 +180,40 @@ openclaw onboard
 
 ## 📊 仓库统计
 
-- 📁 文件数量：80+
-- 📝 文档页数：90+
-- 💻 示例代码：30+
-- ⭐ 最近更新：2026-03-30 10:00
+- 📁 文件数量：100+
+- 📝 文档页数：110+
+- 💻 示例代码：35+
+- ⭐ 最近更新：2026-03-30 10:33
 
 ## 📝 更新日志
 
-### 2026-03-30 阶段四（持续更新中）
+### 2026-03-30 阶段五（持续更新中）
 
-**10:00 本次更新**：
-- 📁 新增文件：10+
-- 📝 新增文档：5 篇（企业微信/Slack/钉钉/高可用/监控告警）
-- 💻 新增示例：4 个（企业微信/Slack 代码 + README）
-- 🔄 Git 提交：第 19 次
+**10:33 本次更新**：
+- 📁 新增文件：12+
+- 📝 新增文档：8 篇
+- 💻 新增示例：钉钉完整示例
+- 🔄 Git 提交：第 20 次
 
 **本次新增内容**：
 
-✅ **国内平台集成**
-- 企业微信集成指南（群机器人 + 自建应用，完整双向交互）
-- 钉钉机器人集成指南（Stream 模式，无需公网 IP）
+✅ **平台集成**
+- 微信公众号集成指南（服务号双向对话/模板消息/网页授权/OAuth）
 
-✅ **海外平台集成**
-- Slack 集成指南（Block Kit + Slash Commands + 交互卡片）
+✅ **进阶教程**
+- OAuth 2.0 鉴权集成（GitHub/Google/飞书/企业微信 SSO + JWT + RBAC）
+- CI/CD 自动化部署（GitHub Actions 全流水线/多环境/滚动发布/回滚）
+- 数据持久化与备份（SQLite/PostgreSQL/PITR 时间点恢复/云存储同步）
 
-✅ **运维体系**
-- API 网关高可用部署（Docker 多节点 + Nginx 负载均衡 + 零停机更新）
-- 监控与告警系统搭建（Prometheus + Grafana + AlertManager + Loki）
+✅ **FAQ**
+- FAQ 09：故障排查（启动异常/AI 超时/消息丢失/内存泄漏）
+- FAQ 10：升级迁移（标准升级/SQLite→PostgreSQL/破坏性变更处理）
+
+✅ **视频脚本**
+- 第 6 集：企业微信集成实战（18 分钟完整脚本）
 
 ✅ **示例代码**
-- `examples/wecom/wecom-bot.js` - 企业微信完整示例
-- `examples/slack/slack-bot.js` - Slack Bolt 框架示例
+- `examples/dingtalk/dingtalk-bot.js` - Stream 模式/多轮对话/定时播报
 
 ### 2026-03-28 阶段二 + 阶段三（✅ 100% 完成）
 
