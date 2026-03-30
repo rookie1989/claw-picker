@@ -1,175 +1,166 @@
-# 📖 文档索引
+# OpenClaw 文档中心
 
-快速查找 claw-picker 所有文档。
-
-## 🌱 入门指南
-
-| 文档 | 描述 | 预计时间 |
-|------|------|----------|
-| [安装教程](入门指南/01-安装教程.md) | 详细安装步骤 | 10-15 分钟 |
-| [5 分钟快速上手](tutorials/02-5 分钟快速上手.md) | 快速体验流程 | 5 分钟 |
-| [配置文件速查](入门指南/03-配置文件速查手册.md) | 配置项详解 | 参考 |
-| [创建第一个 Bot](getting-started/first-bot.md) | Hello World | 10 分钟 |
-
-## 🚀 场景化指南
-
-| 文档 | 描述 | 难度 |
-|------|------|------|
-| [个人助理搭建](guides/个人助理搭建指南.md) | 30 分钟打造个人 AI 助理 | ⭐⭐ |
-| [团队 Bot 搭建](guides/团队 Bot 搭建指南.md) | 小团队 AI 协作方案 | ⭐⭐⭐ |
-| [客服机器人搭建](guides/客服机器人搭建指南.md) | 7x24 小时智能客服 | ⭐⭐⭐ |
-| [远程部署指南](guides/远程部署指南.md) | 云服务器/Docker 部署 | ⭐⭐⭐ |
-| [企业微信集成](guides/企业微信集成指南.md) | 群机器人/自建应用 | ⭐⭐⭐ |
-| [Slack 集成](guides/Slack集成指南.md) | Block Kit/Slash Commands | ⭐⭐⭐ |
-| [钉钉机器人集成](guides/钉钉机器人集成指南.md) | Stream 模式/工作通知 | ⭐⭐⭐ |
-| [监控与告警系统](guides/监控与告警系统搭建.md) | Prometheus + Grafana | ⭐⭐⭐⭐ |
-| [微信公众号集成](guides/微信公众号集成指南.md) | 服务号双向对话/模板消息 | ⭐⭐⭐ |
-| [小程序 & H5 集成](guides/小程序H5集成指南.md) | 微信小程序/云函数/流式 | ⭐⭐⭐ |
-| [微信支付集成](guides/微信支付集成指南.md) | JSAPI/Native/H5 + AI 智能收款 | ⭐⭐⭐⭐ |
-| [故障排查 Runbook](guides/故障排查Runbook.md) | 10 大故障场景完整排查手册 | ⭐⭐⭐⭐ |
-| [Personal AI Assistant (EN)](guides/personal-assistant-guide.en.md) | Telegram/WhatsApp/Discord/Slack | ⭐⭐ |
-| [Team Bot for Organizations (EN)](guides/team-bot-guide.en.md) | Slack/Teams/Feishu/WeCom 多平台 | ⭐⭐⭐⭐ |
-
-## 🎓 进阶教程
-
-| 文档 | 描述 | 难度 |
-|------|------|------|
-| [多通道配置](advanced/multi-channel.md) | 连接多个聊天应用 | ⭐⭐ |
-| [自定义插件开发](advanced/custom-plugins.md) | 开发专属插件 | ⭐⭐⭐ |
-| [智能体路由策略](advanced/agent-routing.md) | 多 AI 助手协作 | ⭐⭐⭐ |
-| [技能开发教程](advanced/skill-development.md) | 创建自定义技能 | ⭐⭐ |
-| [多智能体协作](advanced/multi-agent-collaboration.md) | 复杂任务分解 | ⭐⭐⭐⭐ |
-| [高可用部署](advanced/ha-deployment.md) | 多节点/负载均衡/零停机 | ⭐⭐⭐⭐⭐ |
-| [OAuth 2.0 鉴权](advanced/oauth-integration.md) | GitHub/Google/飞书 SSO | ⭐⭐⭐ |
-| [CI/CD 自动化部署](advanced/cicd-deployment.md) | GitHub Actions 全流水线 | ⭐⭐⭐⭐ |
-| [数据持久化与备份](advanced/data-persistence.md) | PostgreSQL/PITR/云同步 | ⭐⭐⭐⭐ |
-| [性能调优专题](advanced/performance-tuning.md) | 缓存/连接池/熔断降级 | ⭐⭐⭐⭐ |
-| [多智能体协作](advanced/multi-agent.md) | Pipeline/并行/动态路由 | ⭐⭐⭐⭐⭐ |
-| [OpenTelemetry 分布式追踪](advanced/opentelemetry.md) | 全链路可观测/Jaeger/Tempo | ⭐⭐⭐⭐ |
-| [多模型智能路由](advanced/multi-model-routing.md) | 按类型/成本/延迟自动择优 | ⭐⭐⭐⭐ |
-| [企业级 RBAC 权限系统](advanced/rbac-permission-system.md) | 多租户/角色/配额/审计 | ⭐⭐⭐⭐⭐ |
-| [RAG 知识库集成](advanced/rag-knowledge-base.md) | 向量搜索/Pinecone/混合检索 | ⭐⭐⭐⭐⭐ |
-| [Kubernetes 生产部署](advanced/kubernetes-deployment.md) | HPA/Rolling Update/多区域高可用 | ⭐⭐⭐⭐⭐ |
-
-## 📖 图文教程
-
-| 文档 | 描述 | 时长 |
-|------|------|------|
-| [安装教程](tutorials/01-安装教程.md) | 完整安装步骤 | 10-15 分钟 |
-| [5 分钟快速上手](tutorials/02-5 分钟快速上手.md) | 快速体验流程 | 5 分钟 |
-| [晨间简报自动化](tutorials/03-晨间简报自动化.md) | 每日自动汇总 | 30 分钟 |
-
-## 💻 示例代码
-
-### 飞书集成
-- [README](examples/feishu/README.md)
-- 多维表格项目跟踪器
-- 日历会议调度器
-- 文档周报生成器
-- 任务项目管理器
-
-### GitHub 集成
-- [README](examples/github/README.md)
-- Issue 自动处理器
-- PR 自动审查员
-
-### Notion 集成
-- [README](examples/notion/README.md)
-- notion-sync.js — 批量 AI 摘要/知识库问答/消息→Notion/每日报告
-
-### 技能示例
-- [README](examples/skills/README.md)
-- 天气查询技能
-- 智能提醒技能
-
-### 其他示例
-- 定时任务（cron/）
-- 数据库同步（database/）
-
-## 📋 速查表
-
-| 文档 | 描述 |
-|------|------|
-| [OpenClaw 命令速查](cheatsheets/openclaw-commands-cheatsheet.md) | 常用命令和配置片段 |
-| [飞书 API 速查](cheatsheets/feishu-api-cheatsheet.md) | 飞书 API 和代码示例 |
-
-## 🤝 飞书深度集成
-
-### 基础集成
-- [多维表格](feishu-integration/basic/bitable.md)
-- [日历](feishu-integration/basic/calendar.md)
-- [任务](feishu-integration/basic/task.md)
-- [文档](feishu-integration/basic/doc.md)
-
-### 实战工作流
-- [工作流总览](feishu-integration/workflows/README.md)
-- 晨间简报
-- 会议纪要
-- 周报生成
-
-## ❓ 常见问题
-
-| 文档 | 描述 |
-|------|------|
-| [安装问题](FAQ/01-安装问题.md) | 安装相关疑问 |
-| [配置问题](FAQ/02-配置问题.md) | 配置文件相关 |
-| [渠道连接](FAQ/03-渠道连接.md) | 聊天应用连接 |
-| [AI 模型](FAQ/04-AI 模型.md) | 模型配置和切换 |
-| [工具使用](FAQ/05-工具使用.md) | 技能和工具使用 |
-| [性能优化](FAQ/06-性能优化.md) | 性能调优 |
-| [安全加固](FAQ/07-安全加固.md) | 安全配置 |
-| [性能优化进阶](FAQ/08-性能优化进阶.md) | 高级性能问题 |
-
-## 🎬 视频教程
-
-| 集数 | 标题 | 状态 |
-|------|------|------|
-| 01 | OpenClaw 是什么？ | ✅ 完成 |
-| 02 | 5 分钟快速上手 | ✅ 完成 |
-| 03 | 飞书深度集成实战 | 🚧 制作中 |
-| 04 | GitHub Issue 自动处理 | 📋 计划 |
-| 05 | 自定义技能开发 | ✅ 完成 |
-| 06 | 企业微信集成实战 | ✅ 完成 |
-| 07 | 高可用部署 + 监控告警 | ✅ 完成 |
-| 08 | 性能调优实战（P99 8s→1.2s）| ✅ 完成 |
-| 09 | 微信支付实战（AI 收款）| ✅ 完成 |
-| 10 | RBAC 权限实战（多租户权限管控）| ✅ 完成 |
-
-[视频脚本](video-scripts/README.md)
-
-## 📚 其他资源
-
-- [项目路线图](ROADMAP.md)
-- [贡献指南](CONTRIBUTING.md)
-- [部署指南](DEPLOY.md)
-- [故障排查](troubleshooting/README.md)
-
-## 🔍 快速搜索
-
-使用 GitHub 搜索功能：
-```
-在仓库中搜索关键词
-```
-
-或浏览目录结构：
-```
-docs/
-├── 入门指南/
-├── tutorials/
-├── advanced/
-├── guides/
-├── feishu-integration/
-├── cheatsheets/
-├── FAQ/
-└── video-scripts/
-```
-
-## 📮 找不到需要的内容？
-
-- 提交 [Issue](https://github.com/rookie1989/claw-picker/issues) 建议新文档
-- 查看 [官方文档](https://docs.openclaw.ai)
-- 参与 [社区讨论](https://discord.com/invite/clawd)
+> 多通道 AI 网关 · 从安装到精通
 
 ---
 
-_最后更新：2026-03-30 11:25_
+## 🗺️ 学习路径
+
+```
+入门  ──→  实战  ──→  进阶  ──→  专家
+10 min     1-2 hr    半天       持续精进
+```
+
+---
+
+## 第一阶段：入门（10 分钟跑起来）
+
+| 文档 | 说明 |
+|------|------|
+| [📦 安装教程](tutorials/01-安装教程.md) | Node.js 安装、npm 配置、首次启动 |
+| [⚡ 5 分钟快速上手](tutorials/02-5%20分钟快速上手.md) | 连接 AI + 发第一条消息 |
+| [🤖 创建第一个 Bot](getting-started/first-bot.md) | 完成一个可用的 Bot |
+
+---
+
+## 第二阶段：实战（选择你的场景）
+
+### 🧑 个人使用
+
+| 文档 | 适合 |
+|------|------|
+| [个人助理搭建指南](guides/个人助理搭建指南.md) | 日常工作、写作、信息查询 |
+| [晨间简报自动化](tutorials/03-晨间简报自动化.md) | 每天自动推送简报 |
+| [邮件助理指南](guides/email-assistant-guide.md) | 邮件撰写与分类 |
+
+### 👥 团队协作
+
+| 文档 | 适合 |
+|------|------|
+| [团队 Bot 搭建指南](guides/团队%20Bot%20搭建指南.md) | 3-20 人团队，知识库 + 任务跟踪 |
+| [客服机器人搭建指南](guides/客服机器人搭建指南.md) | 7×24 自动回复、工单处理 |
+| [GitHub Issue 自动化](guides/github-issue-auto.md) | Issue 分配、PR 提醒 |
+
+### 🔗 平台集成
+
+| 平台 | 文档 |
+|------|------|
+| 飞书 | [飞书深度集成总览](feishu-integration/) |
+| 企业微信 | [企业微信集成指南](guides/企业微信集成指南.md) |
+| 微信公众号 | [微信公众号集成指南](guides/微信公众号集成指南.md) |
+| 钉钉 | [钉钉机器人集成指南](guides/钉钉机器人集成指南.md) |
+| Slack | [Slack 集成指南](guides/Slack集成指南.md) |
+
+---
+
+## 第三阶段：进阶（系统能力提升）
+
+### ⚙️ 配置与技能
+
+| 文档 | 说明 |
+|------|------|
+| [自定义技能开发](advanced/skill-development.md) | 编写你自己的 Skill |
+| [插件开发入门](advanced/custom-plugins.md) | Plugin API 基础 |
+| [插件开发进阶](advanced/custom-plugins-advanced.md) | 复杂插件模式 |
+| [OAuth 鉴权集成](advanced/oauth-integration.md) | 接入第三方 OAuth |
+| [RAG 知识库](advanced/rag-knowledge-base.md) | 给 Bot 加私有知识库 |
+
+### 🤖 多智能体
+
+| 文档 | 说明 |
+|------|------|
+| [多 Agent 基础](advanced/multi-agent.md) | Agent 间通信与协作 |
+| [多 Agent 进阶](advanced/multi-agent-collaboration.md) | 复杂任务编排 |
+| [Agent 路由策略](advanced/agent-routing.md) | 按意图分发请求 |
+| [多模型路由](advanced/multi-model-routing.md) | 不同任务用不同模型 |
+
+### 📡 多渠道
+
+| 文档 | 说明 |
+|------|------|
+| [多渠道基础](advanced/multi-channel.md) | 同时接入多个平台 |
+| [多渠道进阶](advanced/multi-channel-advanced.md) | 渠道级权限与路由 |
+
+### ⏰ 自动化
+
+| 文档 | 说明 |
+|------|------|
+| [定时任务（Cron）](advanced/cron-jobs.md) | 定时触发、周期任务 |
+| [CI/CD 自动部署](advanced/cicd-deployment.md) | GitHub Actions 集成 |
+
+---
+
+## 第四阶段：专家（生产级部署）
+
+### 🚀 部署方案
+
+| 文档 | 说明 |
+|------|------|
+| [远程部署指南](guides/远程部署指南.md) | 云服务器/VPS/Docker |
+| [高可用部署](advanced/ha-deployment.md) | 多实例 + 负载均衡 |
+| [Kubernetes 部署](advanced/kubernetes-deployment.md) | K8s 生产环境 |
+
+### 🔒 安全与权限
+
+| 文档 | 说明 |
+|------|------|
+| [RBAC 权限系统](advanced/rbac-permission-system.md) | 角色与权限管理 |
+| [安全加固](FAQ/07-安全加固.md) | 常见安全实践 |
+
+### 📊 监控与性能
+
+| 文档 | 说明 |
+|------|------|
+| [监控与告警系统](guides/监控与告警系统搭建.md) | Prometheus + Grafana |
+| [OpenTelemetry 集成](advanced/opentelemetry.md) | 链路追踪与指标 |
+| [性能调优](advanced/performance-tuning.md) | 吞吐量与延迟优化 |
+| [数据持久化](advanced/data-persistence.md) | Redis / PostgreSQL |
+
+---
+
+## 📖 参考资料
+
+### 速查表
+
+| 文档 | 说明 |
+|------|------|
+| [OpenClaw 命令速查](cheatsheets/openclaw-commands-cheatsheet.md) | CLI 常用命令 |
+| [飞书 API 速查](cheatsheets/feishu-api-cheatsheet.md) | 飞书常用接口 |
+
+### 飞书集成详解
+
+| 文档 | 说明 |
+|------|------|
+| [日历（快速上手）](feishu-integration/basic/calendar-quickstart.md) | 对话式日程管理 |
+| [日历（API 详解）](feishu-integration/basic/calendar-api.md) | 完整 API 参考 |
+| [多维表格（快速上手）](feishu-integration/basic/bitable-quickstart.md) | 对话式数据操作 |
+| [多维表格（API 详解）](feishu-integration/basic/bitable-api.md) | 完整 API 参考 |
+| [云文档（快速上手）](feishu-integration/basic/doc-quickstart.md) | 对话式文档操作 |
+| [云文档（API 详解）](feishu-integration/basic/doc-api.md) | 完整 API 参考 |
+| [任务（快速上手）](feishu-integration/basic/task-quickstart.md) | 对话式任务管理 |
+| [任务（API 详解）](feishu-integration/basic/task-api.md) | 完整 API 参考 |
+
+### FAQ
+
+| 文档 | 说明 |
+|------|------|
+| [安装问题](FAQ/01-安装问题.md) | 安装失败、依赖问题 |
+| [配置问题](FAQ/02-配置问题.md) | config.json 常见错误 |
+| [渠道连接](FAQ/03-渠道连接.md) | Webhook、Bot Token 问题 |
+| [AI 模型](FAQ/04-AI%20模型.md) | 模型选择、API Key 问题 |
+| [工具使用](FAQ/05-工具使用.md) | Skill 调用、工具报错 |
+| [性能优化](FAQ/06-性能优化.md) | 响应慢、内存问题 |
+| [故障排查](FAQ/09-故障排查.md) | 通用排查流程 |
+| [升级迁移](FAQ/10-升级迁移.md) | 版本升级注意事项 |
+
+---
+
+## 🤝 参与贡献
+
+- [贡献指南](../CONTRIBUTING.md)
+- [提交 Issue](https://github.com/rookie1989/claw-picker/issues)
+- [示例代码库](../examples/)
+
+---
+
+_最后更新：2026-03-30_
