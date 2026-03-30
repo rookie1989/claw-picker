@@ -89,10 +89,13 @@ openclaw onboard
 - [OAuth 2.0 鉴权集成](docs/advanced/oauth-integration.md) - GitHub/Google/飞书/企微 SSO ⭐ NEW
 - [CI/CD 自动化部署](docs/advanced/cicd-deployment.md) - GitHub Actions 全流水线 ⭐ NEW
 - [数据持久化与备份](docs/advanced/data-persistence.md) - SQLite/PostgreSQL/PITR ⭐ NEW
+- [性能调优专题](docs/advanced/performance-tuning.md) - 缓存/连接池/限流/熔断 ⭐ NEW
+- [多智能体协作](docs/advanced/multi-agent.md) - Pipeline/并行/动态路由编排 ⭐ NEW
 
 ### 🔧 运维指南
 - [监控与告警系统搭建](docs/guides/监控与告警系统搭建.md) - Prometheus + Grafana + AlertManager ⭐ NEW
 - [微信公众号集成指南](docs/guides/微信公众号集成指南.md) - 服务号双向对话/模板消息 ⭐ NEW
+- [小程序 & H5 集成指南](docs/guides/小程序H5集成指南.md) - 微信小程序/移动 H5 AI 接入 ⭐ NEW
 
 ### 📖 图文教程
 - [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
@@ -102,7 +105,7 @@ openclaw onboard
 ### 💻 示例代码
 - [飞书集成示例](examples/feishu/) - 多维表格/日历/任务/文档
 - [GitHub 集成示例](examples/github/) - Issue 处理/PR 审查 ⭐ NEW
-- [Notion 集成示例](examples/notion/) - 页面创建/数据库管理
+- [Notion 集成示例](examples/notion/) - AI 摘要/知识库问答/消息同步 ⭐ NEW
 - [定时任务示例](examples/cron/) - 日报/周报自动生成
 - [技能示例](examples/skills/) - 天气查询/智能提醒 ⭐ NEW
 - [数据库同步示例](examples/database/) ⭐ NEW
@@ -180,40 +183,46 @@ openclaw onboard
 
 ## 📊 仓库统计
 
-- 📁 文件数量：100+
-- 📝 文档页数：110+
-- 💻 示例代码：35+
-- ⭐ 最近更新：2026-03-30 10:33
+- 📁 文件数量：120+
+- 📝 文档页数：130+
+- 💻 示例代码：40+
+- ⭐ 最近更新：2026-03-30 11:03
 
 ## 📝 更新日志
 
-### 2026-03-30 阶段五（持续更新中）
+### 2026-03-30 阶段六（持续更新中）
 
-**10:33 本次更新**：
-- 📁 新增文件：12+
-- 📝 新增文档：8 篇
-- 💻 新增示例：钉钉完整示例
-- 🔄 Git 提交：第 20 次
+**11:03 本次更新**：
+- 📁 新增文件：10+
+- 📝 新增文档：6 篇
+- 💻 新增示例：Notion 完整示例（notion-sync.js）
+- 🔄 Git 提交：第 21 次
 
 **本次新增内容**：
 
-✅ **平台集成**
-- 微信公众号集成指南（服务号双向对话/模板消息/网页授权/OAuth）
+✅ **示例代码**
+- Notion 深度集成（批量 AI 摘要/知识库问答/消息→Notion/每日报告推送）
 
 ✅ **进阶教程**
-- OAuth 2.0 鉴权集成（GitHub/Google/飞书/企业微信 SSO + JWT + RBAC）
-- CI/CD 自动化部署（GitHub Actions 全流水线/多环境/滚动发布/回滚）
-- 数据持久化与备份（SQLite/PostgreSQL/PITR 时间点恢复/云存储同步）
-
-✅ **FAQ**
-- FAQ 09：故障排查（启动异常/AI 超时/消息丢失/内存泄漏）
-- FAQ 10：升级迁移（标准升级/SQLite→PostgreSQL/破坏性变更处理）
+- 性能调优专题（AI 缓存/连接池/异步队列/限流/熔断降级）
+- 多智能体协作（Pipeline/并行/动态路由 + 内容创作/客服/代码审查实战）
 
 ✅ **视频脚本**
-- 第 6 集：企业微信集成实战（18 分钟完整脚本）
+- 第 7 集：多智能体协作实战（20 分钟完整脚本）
 
-✅ **示例代码**
-- `examples/dingtalk/dingtalk-bot.js` - Stream 模式/多轮对话/定时播报
+✅ **国际化**
+- README.en.md 英文版完整文档
+
+✅ **场景化指南**
+- 小程序 & H5 集成指南（微信小程序/云函数/流式响应/微信登录）
+
+### 2026-03-30 阶段五
+
+**10:33 更新（第 20 次提交）**：
+- 微信公众号集成指南、OAuth 2.0 鉴权、CI/CD 自动化、数据持久化
+- FAQ 09 故障排查、FAQ 10 升级迁移
+- 视频脚本第 6 集：企业微信集成实战
+- examples/dingtalk/ 钉钉完整示例
 
 ### 2026-03-28 阶段二 + 阶段三（✅ 100% 完成）
 

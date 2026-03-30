@@ -24,6 +24,7 @@
 | [钉钉机器人集成](guides/钉钉机器人集成指南.md) | Stream 模式/工作通知 | ⭐⭐⭐ |
 | [监控与告警系统](guides/监控与告警系统搭建.md) | Prometheus + Grafana | ⭐⭐⭐⭐ |
 | [微信公众号集成](guides/微信公众号集成指南.md) | 服务号双向对话/模板消息 | ⭐⭐⭐ |
+| [小程序 & H5 集成](guides/小程序H5集成指南.md) | 微信小程序/云函数/流式 | ⭐⭐⭐ |
 
 ## 🎓 进阶教程
 
@@ -38,6 +39,8 @@
 | [OAuth 2.0 鉴权](advanced/oauth-integration.md) | GitHub/Google/飞书 SSO | ⭐⭐⭐ |
 | [CI/CD 自动化部署](advanced/cicd-deployment.md) | GitHub Actions 全流水线 | ⭐⭐⭐⭐ |
 | [数据持久化与备份](advanced/data-persistence.md) | PostgreSQL/PITR/云同步 | ⭐⭐⭐⭐ |
+| [性能调优专题](advanced/performance-tuning.md) | 缓存/连接池/熔断降级 | ⭐⭐⭐⭐ |
+| [多智能体协作](advanced/multi-agent.md) | Pipeline/并行/动态路由 | ⭐⭐⭐⭐⭐ |
 
 ## 📖 图文教程
 
@@ -156,4 +159,4 @@ docs/
 
 ---
 
-_最后更新：2026-03-30 10:33_
+_最后更新：2026-03-30 11:03_
