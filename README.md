@@ -92,6 +92,8 @@ openclaw onboard
 - [性能调优专题](docs/advanced/performance-tuning.md) - 缓存/连接池/限流/熔断 ⭐ NEW
 - [多智能体协作](docs/advanced/multi-agent.md) - Pipeline/并行/动态路由编排 ⭐ NEW
 - [OpenTelemetry 分布式追踪](docs/advanced/opentelemetry.md) - 全链路可观测性/Jaeger/Grafana Tempo ⭐ NEW
+- [多模型智能路由](docs/advanced/multi-model-routing.md) - 按类型/成本/延迟自动选模型（节省 85% 费用）⭐ NEW
+- [企业级 RBAC 权限系统](docs/advanced/rbac-permission-system.md) - 多租户/角色/配额/审计完整方案 ⭐ NEW
 
 ### 🔧 运维指南
 - [监控与告警系统搭建](docs/guides/监控与告警系统搭建.md) - Prometheus + Grafana + AlertManager ⭐ NEW
@@ -99,6 +101,7 @@ openclaw onboard
 - [小程序 & H5 集成指南](docs/guides/小程序H5集成指南.md) - 微信小程序/移动 H5 AI 接入 ⭐ NEW
 - [微信支付集成指南](docs/guides/微信支付集成指南.md) - JSAPI/Native/H5 支付 + AI 智能收款 ⭐ NEW
 - [故障排查 Runbook](docs/guides/故障排查Runbook.md) - 10 大故障场景完整排查手册 ⭐ NEW
+- [个人 AI 助理搭建指南（英文）](docs/guides/personal-assistant-guide.en.md) - Telegram/WhatsApp/Discord/Slack ⭐ NEW
 
 ### 📖 图文教程
 - [📖 安装教程](docs/tutorials/01-安装教程.md) - 完整安装步骤，10-15 分钟
@@ -158,8 +161,10 @@ openclaw onboard
 - ✅ **分布式追踪**: OpenTelemetry + Jaeger/Grafana Tempo 全链路可观测
 - ✅ **微信支付**: JSAPI/Native/H5 支付 + AI 智能收款助手
 - ✅ **故障 Runbook**: 10 大故障场景完整排查手册
+- ✅ **智能路由**: 多模型动态路由，按任务类型/成本/延迟自动择优（节省 85%）
+- ✅ **RBAC 权限**: 多租户/角色/配额/审计全套企业权限管控
 - ✅ **丰富示例**: 40+ 实用示例代码
-- ✅ **场景化指南**: 个人/团队/客服/企业多种场景
+- ✅ **场景化指南**: 个人/团队/客服/企业多种场景（含英文版）
 
 ## 🤝 参与贡献
 
@@ -189,20 +194,38 @@ openclaw onboard
 
 ## 📊 仓库统计
 
-- 📁 文件数量：130+
-- 📝 文档页数：145+
+- 📁 文件数量：145+
+- 📝 文档页数：165+
 - 💻 示例代码：40+
-- ⭐ 最近更新：2026-03-30 11:25
+- ⭐ 最近更新：2026-03-30 11:52
 
 ## 📝 更新日志
 
-### 2026-03-30 阶段七（持续更新中）
+### 2026-03-30 阶段八（持续更新中）
 
-**11:25 本次更新**：
-- 📁 新增文件：6
-- 📝 新增文档：5 篇（均为深度长文）
-- 💻 新增示例：英文版入门指南
-- 🔄 Git 提交：第 22 次
+**11:52 本次更新**：
+- 📁 新增文件：4
+- 📝 新增文档：4 篇（均为深度长文）
+- 🎬 新增视频脚本：第 9 集
+- 🌐 新增英文文档：Personal AI Assistant Guide
+- 🔄 Git 提交：第 23 次
+
+**本次新增内容**：
+
+✅ **英文场景指南**
+- `docs/guides/personal-assistant-guide.en.md` — 个人 AI 助理英文完整指南（Telegram/WhatsApp/Discord/Slack + 6 大 Skill + 生产部署 + 安全加固）
+
+✅ **视频脚本**
+- 第 9 集：微信支付实战（24 分钟脚本，JSAPI/Native/H5 三种方式 + AI 收款 Skill + 回调幂等处理）
+
+✅ **进阶教程**
+- 多模型智能路由（意图识别 + 成本计算 + 延迟感知 + 降级策略，实测节省 85% 费用）
+- 企业级 RBAC 权限系统（完整 DB Schema + 权限检查 + 配额管理 + 审计日志 + CLI 工具）
+
+### 2026-03-30 阶段七
+
+**11:25 更新（第 22 次提交）**：
+- 新增文档：5 篇（英文入门 + 视频脚本8 + 微信支付 + OTel + 故障Runbook）
 
 **本次新增内容**：
 

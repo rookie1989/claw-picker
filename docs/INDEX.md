@@ -27,6 +27,7 @@
 | [小程序 & H5 集成](guides/小程序H5集成指南.md) | 微信小程序/云函数/流式 | ⭐⭐⭐ |
 | [微信支付集成](guides/微信支付集成指南.md) | JSAPI/Native/H5 + AI 智能收款 | ⭐⭐⭐⭐ |
 | [故障排查 Runbook](guides/故障排查Runbook.md) | 10 大故障场景完整排查手册 | ⭐⭐⭐⭐ |
+| [Personal AI Assistant (EN)](guides/personal-assistant-guide.en.md) | Telegram/WhatsApp/Discord/Slack | ⭐⭐ |
 
 ## 🎓 进阶教程
 
@@ -44,6 +45,8 @@
 | [性能调优专题](advanced/performance-tuning.md) | 缓存/连接池/熔断降级 | ⭐⭐⭐⭐ |
 | [多智能体协作](advanced/multi-agent.md) | Pipeline/并行/动态路由 | ⭐⭐⭐⭐⭐ |
 | [OpenTelemetry 分布式追踪](advanced/opentelemetry.md) | 全链路可观测/Jaeger/Tempo | ⭐⭐⭐⭐ |
+| [多模型智能路由](advanced/multi-model-routing.md) | 按类型/成本/延迟自动择优 | ⭐⭐⭐⭐ |
+| [企业级 RBAC 权限系统](advanced/rbac-permission-system.md) | 多租户/角色/配额/审计 | ⭐⭐⭐⭐⭐ |
 
 ## 📖 图文教程
 
@@ -122,7 +125,11 @@
 | 02 | 5 分钟快速上手 | ✅ 完成 |
 | 03 | 飞书深度集成实战 | 🚧 制作中 |
 | 04 | GitHub Issue 自动处理 | 📋 计划 |
-| 05 | 自定义技能开发 | 📋 计划 |
+| 05 | 自定义技能开发 | ✅ 完成 |
+| 06 | 企业微信集成实战 | ✅ 完成 |
+| 07 | 高可用部署 + 监控告警 | ✅ 完成 |
+| 08 | 性能调优实战（P99 8s→1.2s）| ✅ 完成 |
+| 09 | 微信支付实战（AI 收款）| ✅ 完成 |
 
 [视频脚本](video-scripts/README.md)
 
